@@ -1088,7 +1088,7 @@ export default {
         }
       },
       "patternProperties": {
-        "[1-5](?:\\d{2}|XX)": {
+        "\\d{3}|\\d{1}XX": {
           "oneOf": [
             {
               "$ref": "#/definitions/Response"

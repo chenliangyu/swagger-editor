@@ -19,11 +19,3 @@ cp ../index.html .
 # Rewire `./dist` references to `.` in index.html
 sed -i.bak "s/\.\/dist/\./g" index.html
 rm index.html.bak
-
-if [ "$PUBLISH_DIST" = "true" ] || [ "$TRAVIS" = "true" ] ; then
-  npm publish .
-else
-  npm pack .
-fi
-
-find . -not -name .npmignore -not -name .npmrc -not -name deploy.sh -not -name package.json -not -name README.md -not -name *.tgz -delete
